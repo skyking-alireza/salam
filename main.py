@@ -53,8 +53,10 @@ for tttt in  best_block_hash:
     txidsBEbinary.append(tttt['txid'])
 kmlistroot = CalculatedMerkleRoot(txidsBEbinary)
 txidsBEbinary2 = []
+print("11111111111111111111111111111")
 for tttt in  best_block_hash:
     txidsBEbinary2.append(rpc_connection.gettransaction(tttt['txid'])['hex'])
+print("22222222222222222222222222222")
 txidsBEbinary2 = "".join(txidsBEbinary2[::-1])
 cccccc = int2varinthex(hex(len(txidsBEbinary) + 1))
 coinbase = "01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff4503ec59062f48616f4254432f53756e204368756e2059753a205a6875616e67205975616e2c2077696c6c20796f75206d61727279206d653f2f06fcc9cacc19c5f278560300ffffffff0143649d260000000076a914380ab03fd34c3c6e70b2eb8bd34e812ed9d9ec3088ac00000000"
