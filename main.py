@@ -35,7 +35,7 @@ def int2varinthex(value):
     else:
         return "ff" + int2lehex(value, 8)
 f = lambda n:n.to_bytes(4,"little").hex()
-rpc_connection = AuthServiceProxy("http://%s:%s@6.tcp.ngrok.io:17562"%('skyking@123', 'skyking@123'))
+rpc_connection = AuthServiceProxy("http://%s:%s@2.tcp.ngrok.io:12675"%('skyking@123', 'skyking@123'))
 best_block_hash = rpc_connection.listtransactions()
 getblocktemplate = rpc_connection.getblocktemplate({"rules": ["segwit"]})
 version = f(getblocktemplate['version'])
